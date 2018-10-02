@@ -10,7 +10,7 @@
     "e2e": "ng e2e",
     "build.gh": "ng build --prod --base-href=brunoede.info --output-path=docs && npm run create-404 && npm run copy-cname",
     "create-404": "cp docs/index.html docs/404.html",
-    "copy-cname": "cp docs/index.html docs/404.html"
+    "copy-cname": "cp CNAME docs/CNAME"
   },
   "private": true,
   "dependencies": {
