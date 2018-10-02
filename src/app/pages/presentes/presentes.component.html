@@ -24,3 +24,24 @@
 <p>Criamos também uma lista </p>
 
 <h2>Lista de presentes</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Produto</th>
+      <th align="left">Cor</th>
+      <th align="left">Marcas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor=" let presente of presentes ">
+      <td>{{ presente.nome }}</td>
+      <td>{{ presente.cor }}</td>
+      <td>{{ presente.marcas }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Ps.: Favor avisar aos noivos caso for presentear com algum dos itens acima para que seja removido da lista e evite presentes
+  duplicados. brunodasj@gmail.com ou denisefaccin@gmail.com. Obrigado!
+</p>
