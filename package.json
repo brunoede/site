@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build.gh": "ng build --prod --base-href=brunoede.info --output-path=docs && npm run create-404",
+    "create-404": "cp docs/index.html docs/404.html"
   },
   "private": true,
   "dependencies": {
