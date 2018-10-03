@@ -11,7 +11,10 @@ export const PRESENTES = [
   { nome: 'Jogo de 6 cadeiras para mesa de madeira angelim', marcas: '', cor: '' },
   { nome: 'Chaleira elétrica', marcas: '', cores: '' },
   { nome: 'Colchão de solteiro D33(2)', marcas: '', cores: '' },
-  { nome: 'Roupa de cama casal(jogo de lençol)(3)', marcas: '', cores: '' },
-  { nome: 'Roupa de cama solteiro(jogo de lençol)(3)', marcas: '', cores: '' },
-  { nome: 'Toalhas de banho(6)', marcas: '', cores: '' },
+  { nome: 'Jogo de lençol casal (3)', marcas: '', cores: '' },
+  { nome: 'Jogo de lençol solteiro (3)', marcas: '', cores: '' },
+  { nome: 'Toalhas de banho (6)', marcas: '', cores: '' },
+  { nome: 'Jogo de taças de vinho', marcas: '', cores: '' },
+  { nome: 'Jogo de tapetes banheiro (3)', marcas: '', cores: '' },
+  { nome: 'Capacho de bem vindo', marcas: '', cores: '' },
 ];
