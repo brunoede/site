@@ -9,4 +9,9 @@ export const PRESENTES = [
   { nome: 'Jogo de panelas inox', marcas: '', cor: '' },
   { nome: 'Jogo de talheres inox', marcas: '', cor: '' },
   { nome: 'Jogo de 6 cadeiras para mesa de madeira angelim', marcas: '', cor: '' },
+  { nome: 'Chaleira elétrica', marcas: '', cores: '' },
+  { nome: 'Colchão de solteiro D33(2)', marcas: '', cores: '' },
+  { nome: 'Roupa de cama casal(jogo de lençol)(3)', marcas: '', cores: '' },
+  { nome: 'Roupa de cama solteiro(jogo de lençol)(3)', marcas: '', cores: '' },
+  { nome: 'Toalhas de banho(6)', marcas: '', cores: '' },
 ];
