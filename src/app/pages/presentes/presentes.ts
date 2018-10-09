@@ -1,4 +1,5 @@
 export const PRESENTES = [
+  { nome: 'Vale Beijos e abraços', marcas: '', cor: '' },
   { nome: 'Sofá 3 lugares retrátil', marcas: '', cor: 'Cinza escuro, Marron, Bege escuro' },
   { nome: 'Microondas 30+ litros', marcas: '', cor: 'Preto, Branco ou Prata' },
   { nome: 'Máquina de lavar 10kg+', marcas: 'Brastemp, Consul ou Electrolux', cor: '' },
