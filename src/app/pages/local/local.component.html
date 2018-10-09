@@ -1,14 +1,16 @@
-<div class="page-container">
+<div class="page-container" fxLayout="column" fxLayoutGap="16px">
   <h2>Local e Data</h2>
-  <p>16 de Dezembro de 2018</p>
-  <p>Sítio Seu Antônio e Dona Ana</p>
-  <p>Bairro Estiva</p>
-  <p>Capivari de Baixo - SC</p>
+  <div>16 de Dezembro de 2018</div>
+  <div>Sítio Seu Antônio e Dona Ana</div>
+  <div>Bairro Estiva</div>
+  <div>Capivari de Baixo - SC</div>
 
-  <div>
-    <button mat-stroked-button type="button" color="default" (click)="showMap = !showMap">Mapa</button>
+  <div fxLayout="row" fxLayoutGap="8px" fxLayoutAlign="center">
+    <button mat-stroked-button type="button" color="default" (click)="showMap = !showMap" [color]="showMap ? 'primary' : ''">Mapa</button>
+    <button mat-stroked-button type="button" color="default" (click)="showMap = !showMap">Fotos</button>
+    <button mat-stroked-button type="button" color="default" (click)="showMap = !showMap">Video</button>
   </div>
-  <br>
+
   <div *ngIf="showMap">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2511.2291638243605!2d-48.92131161940614!3d-28.416249988012876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDI0JzU4LjUiUyA0OMKwNTUnMTAuMiJX!5e1!3m2!1spt-BR!2sbr!4v1539041001817"
       width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>

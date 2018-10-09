@@ -5,8 +5,8 @@
 @include mat-core();
 
 // Default App Custom theme
-$primary: mat-palette($mat-teal, 700);
-$accent: mat-palette($mat-brown, A400);
+$primary: mat-palette($mat-brown, A400);
+$accent: mat-palette($mat-teal, 700);
 $warn: mat-palette($mat-red, 500);
 $green-theme: mat-light-theme($primary, $accent, $warn);
 
@@ -17,4 +17,12 @@ body {
   padding: 0;
   background-image: url("/assets/images/bg.jpg");
   background-repeat: repeat;
+  
+  h1, h3 {
+    color: mat-color($primary);
+  }
+
+  h2 {
+    color: mat-color($accent);
+  }
 }
