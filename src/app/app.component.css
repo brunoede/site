@@ -1,0 +1,12 @@
+.container {
+  width: 100%;
+}
+
+.content {
+  background-color: #fff;
+  width: 600px;
+  max-width: 600px;
+  margin: auto;
+  padding: 24px;
+  border-radius: 0 0 8px 8px;
+}

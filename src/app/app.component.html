@@ -5,6 +5,9 @@
   <a mat-flat-button routerLink="presentes" routerLinkActive #rla4="routerLinkActive" [color]="rla4.isActive ? 'primary' : ''">Lista de presentes</a>
 </mat-toolbar>
 
-<h1 routerLink="" align="center">Denise Faccin e Bruno João</h1>
-
-<router-outlet></router-outlet>
+<div class="container">
+  <div class="content">
+    <h1 align="center">Denise Faccin e Bruno João</h1>
+    <router-outlet></router-outlet>
+  </div>
+</div>

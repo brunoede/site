@@ -15,4 +15,6 @@ $green-theme: mat-light-theme($primary, $accent, $warn);
 body {
   margin: 0;
   padding: 0;
+  background-image: url("/assets/images/bg.jpg");
+  background-repeat: repeat;
 }
