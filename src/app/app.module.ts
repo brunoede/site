@@ -1,5 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatButtonModule, MatToolbarModule } from '@angular/material';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -10,6 +14,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { ProgramacaoComponent } from './pages/programacao/programacao.component';
 
 @NgModule({
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatToolbarModule,
+    FlexLayoutModule,
+  ],
   declarations: [
     AppComponent,
     HomeComponent,
@@ -17,10 +30,6 @@ import { ProgramacaoComponent } from './pages/programacao/programacao.component'
     OrientacoesComponent,
     PresentesComponent,
     ProgramacaoComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

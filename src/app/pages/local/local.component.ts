@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LocalComponent implements OnInit {
 
+  showMap;
+
   constructor() { }
 
   ngOnInit() {
