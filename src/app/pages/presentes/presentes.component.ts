@@ -25,7 +25,9 @@ export class PresentesComponent implements OnInit {
 
   ngOnInit() {
 
-    this.giftsCollection = this.db.collection<Gift>('presentes');
+    this.giftsCollection = this.db.collection<Gift>('presentes', ref => {
+      return ref.orderBy('nome');
+    });
 
     this.gifts = this.giftsCollection.valueChanges();
 
