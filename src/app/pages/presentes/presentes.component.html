@@ -2,7 +2,8 @@
 
 <h3>Dinheiro</h3>
 
-<p>Se você pensa em nos presentear, pensamos muito e entendemos que o melhor para nossa família neste momento seria reservar
+<p>Se você pensa em nos presentear, pensamos muito e entendemos que o melhor para nossa família neste momento seria
+  reservar
   um pouco de dinheiro para os meses que virão e para nosso Bernardo que está a caminho.</p>
 
 <div>
@@ -25,7 +26,7 @@
 
 <h3>Lista de presentes</h3>
 
-<table>
+<table *ngIf="(gifts | async) as giftsList else loadingGifts">
   <thead>
     <tr>
       <th align="left">Produto</th>
@@ -34,10 +35,10 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor=" let presente of presentes ">
-      <td>{{ presente.nome }}</td>
-      <td>{{ presente.cores }}</td>
-      <td>{{ presente.marcas }}</td>
+    <tr *ngFor=" let gift of giftsList">
+      <td>{{ gift.nome }}</td>
+      <td>{{ gift.cores }}</td>
+      <td>{{ gift.marcas }}</td>
     </tr>
   </tbody>
 </table>
@@ -45,6 +46,11 @@
 <p>
   <strong>Endereço de entrega:</strong> Rua Brisamar, 561, Ap 206, bloco B. Bairro Ingleses, Florianópolis - SC</p>
 
-<p>Ps.: Favor avisar aos noivos caso for presentear com algum dos itens acima para que seja removido da lista e evite presentes
+<p>Ps.: Favor avisar aos noivos caso for presentear com algum dos itens acima para que seja removido da lista e evite
+  presentes
   duplicados. brunodasj@gmail.com ou denisefaccin@gmail.com. Obrigado!
 </p>
+
+<ng-template #loadingGifts>
+  <h4>Carregando lista de presentes...</h4>
+</ng-template>

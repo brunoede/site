@@ -12,7 +12,7 @@ const AppRoutes = [
   { path: 'localedata', component: LocalComponent },
   { path: 'programacao', component: ProgramacaoComponent },
   { path: 'orientacoes', component: OrientacoesComponent },
-  { path: 'presentes', component: PresentesComponent },
+  { path: 'presentes', loadChildren: './pages/presentes/presentes.module#PresentesModule' },
 ];
 
 @NgModule({
