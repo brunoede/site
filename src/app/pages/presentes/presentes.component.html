@@ -22,14 +22,13 @@
   <strong>CPF</strong> 045.937.059-67
 </div>
 
-<p>Criamos também uma lista </p>
-
 <h3>Lista de presentes</h3>
 
 <table *ngIf="(gifts | async) as giftsList else loadingGifts">
   <thead>
     <tr>
       <th align="left">Produto</th>
+      <th align="left">Quantidade</th>
       <th align="left">Cores</th>
       <th align="left">Marcas</th>
     </tr>
@@ -37,6 +36,7 @@
   <tbody>
     <tr *ngFor=" let gift of giftsList">
       <td>{{ gift.nome }}</td>
+      <td align="center">{{ gift.quantidade || 1 }}</td>
       <td>{{ gift.cores }}</td>
       <td>{{ gift.marcas }}</td>
     </tr>
@@ -44,7 +44,12 @@
 </table>
 
 <p>
-  <strong>Endereço de entrega:</strong> Rua Brisamar, 561, Ap 206, bloco B. Bairro Ingleses, Florianópolis - SC</p>
+  <strong>Endereço de entrega:</strong> Rua Brisamar, 561, Ap 206, bloco B. Bairro Ingleses, Florianópolis - SC
+</p>
+
+<p>
+  <strong>Contatos:</strong> Bruno 48 996585472 e Denise 48 996769212
+</p>
 
 <p>Ps.: Favor avisar aos noivos caso for presentear com algum dos itens acima para que seja removido da lista e evite
   presentes

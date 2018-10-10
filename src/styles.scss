@@ -31,6 +31,10 @@ body {
   }
 }
 
-tr:nth-child(even) {
+tbody tr:nth-child(odd) {
   background-color: rgba(red($primary-color), green($primary-color), blue($primary-color), 0.7);
+}
+
+th, td {
+  padding: 4px 8px;
 }
