@@ -9,9 +9,25 @@ export class LocalComponent implements OnInit {
 
   showMap;
 
+  showing: string;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  showContent(container) {
+
+    if (this.showing === container) {
+
+      this.showing = undefined;
+
+    } else {
+
+      this.showing = container;
+
+    }
+
   }
 
 }
