@@ -8,7 +8,7 @@
 
   <div fxLayout="row" fxLayoutGap="8px" fxLayoutAlign="center">
     <button mat-stroked-button type="button" color="default" (click)="showContent('map')" [color]="showing === 'map'">Mapa</button>
-    <!-- <button mat-stroked-button type="button" color="default" (click)="showContent('video-sul-norte')" [color]="showing === 'video-sul-norte'">Fotos</button> -->
+    <button mat-stroked-button type="button" color="default" (click)="showContent('images')" [color]="showing === 'images'">Fotos</button>
     <button mat-stroked-button type="button" color="default" (click)="showContent('video-sul-norte')" [color]="showing === 'video-sul-norte'">Video</button>
   </div>
 
@@ -20,5 +20,9 @@
   <div *ngIf="showing === 'video-sul-norte'">
     <iframe width="600" height="450" src="https://www.youtube.com/embed/-58iCBXVFuM?rel=0" frameborder="0" allow="autoplay; encrypted-media"
       allowfullscreen></iframe>
+  </div>
+
+  <div *ngIf="showing === 'images'">
+    <img src="https://drive.google.com/thumbnail?id=1QEIYfstuxQZILQr4EW5eWn8DtGwlKuf5&sz=w600">
   </div>
 </div>

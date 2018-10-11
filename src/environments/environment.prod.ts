@@ -7,5 +7,8 @@ export const environment = {
     projectId: 'brunoede-1',
     storageBucket: 'brunoede-1.appspot.com',
     messagingSenderId: '629678641975'
+  },
+  googleDrive: {
+    key: 'AIzaSyC4S3hmFyw22j7KESU7aMex1zITQJVdJcA'
   }
 };
