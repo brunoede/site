@@ -19,6 +19,7 @@ $warn-color: mat-color($warn);
 body {
   margin: 0;
   padding: 0;
+  min-width: 600px;
   background-image: url("/assets/images/bg.jpg");
   background-repeat: repeat;
 

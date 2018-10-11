@@ -1,0 +1,18 @@
+
+.mat-toolbar {
+  background-color: #fff;
+  position: sticky;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+
+  .content {
+    background-color: #fff;
+    padding: 64px 24px 24px 24px;
+    border-radius: 0 0 8px 8px;
+  }
+}
+
