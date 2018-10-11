@@ -1,0 +1,31 @@
+<h2>Sobre os noivos</h2>
+
+<h3>Denise Faccin</h3>
+<p>Minha Amora! Linda da minha vida!</p>
+<p>Mulher maravilhos, batalhadora, parceira e companheira. Sempre disposta e comprometida com a família, amigos e projetos dos quais faz parte.</p>
+
+<h3>Bruno da Silva João</h3>
+<p>...</p>
+
+<div fxLayout="column" fxLayoutGap="16px">
+
+
+  <div fxLayout="row" fxLayoutGap="8px" fxLayoutAlign="center">
+    <button mat-stroked-button type="button" color="default" (click)="showContent('images')" [color]="showing === 'images' ? 'accent' : 'default'">Fotos</button>
+    <button mat-stroked-button type="button" color="default" (click)="showContent('video-sul-norte')" [color]="showing === 'video-sul-norte' ? 'accent' : 'default'">Video</button>
+  </div>
+
+  <div class="media-container">
+
+    <div *ngIf="showing === 'video-sul-norte'">
+      Videos ainda não estão disponíveis. Aguarde!
+    </div>
+
+    <div *ngIf="showing === 'images'">
+      <div *ngFor="let image of images">
+        <img src="https://drive.google.com/thumbnail?id={{image.id}}&sz=w600">
+      </div>
+    </div>
+
+  </div>
+</div>

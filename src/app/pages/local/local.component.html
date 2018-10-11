@@ -7,22 +7,28 @@
   <div>Capivari de Baixo - SC</div>
 
   <div fxLayout="row" fxLayoutGap="8px" fxLayoutAlign="center">
-    <button mat-stroked-button type="button" color="default" (click)="showContent('map')" [color]="showing === 'map'">Mapa</button>
-    <button mat-stroked-button type="button" color="default" (click)="showContent('images')" [color]="showing === 'images'">Fotos</button>
-    <button mat-stroked-button type="button" color="default" (click)="showContent('video-sul-norte')" [color]="showing === 'video-sul-norte'">Video</button>
+    <button mat-stroked-button type="button" color="default" (click)="showContent('map')" [color]="showing === 'map' ? 'accent' : 'default'">Mapa</button>
+    <button mat-stroked-button type="button" color="default" (click)="showContent('images')" [color]="showing === 'images' ? 'accent' : 'default'">Fotos</button>
+    <button mat-stroked-button type="button" color="default" (click)="showContent('video-sul-norte')" [color]="showing === 'video-sul-norte' ? 'accent' : 'default'">Video</button>
   </div>
 
-  <div *ngIf="showing === 'map'">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2511.2291638243605!2d-48.92131161940614!3d-28.416249988012876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDI0JzU4LjUiUyA0OMKwNTUnMTAuMiJX!5e1!3m2!1spt-BR!2sbr!4v1539041001817"
-      width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-  </div>
+  <div class="media-container">
 
-  <div *ngIf="showing === 'video-sul-norte'">
-    <iframe width="600" height="450" src="https://www.youtube.com/embed/-58iCBXVFuM?rel=0" frameborder="0" allow="autoplay; encrypted-media"
-      allowfullscreen></iframe>
-  </div>
+    <div *ngIf="showing === 'map'">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2511.2291638243605!2d-48.92131161940614!3d-28.416249988012876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDI0JzU4LjUiUyA0OMKwNTUnMTAuMiJX!5e1!3m2!1spt-BR!2sbr!4v1539041001817"
+        width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
 
-  <div *ngIf="showing === 'images'">
-    <img src="https://drive.google.com/thumbnail?id=1QEIYfstuxQZILQr4EW5eWn8DtGwlKuf5&sz=w600">
+    <div *ngIf="showing === 'video-sul-norte'">
+      <iframe width="600" height="450" src="https://www.youtube.com/embed/-58iCBXVFuM?rel=0" frameborder="0" allow="autoplay; encrypted-media"
+        allowfullscreen></iframe>
+    </div>
+
+    <div *ngIf="showing === 'images'">
+      <div *ngFor="let image of images">
+        <img src="https://drive.google.com/thumbnail?id={{image.id}}&sz=w600">
+      </div>
+    </div>
+
   </div>
 </div>

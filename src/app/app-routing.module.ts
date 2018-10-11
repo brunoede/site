@@ -9,9 +9,10 @@ import { PresentesComponent } from './pages/presentes/presentes.component';
 
 const AppRoutes = [
   { path: '', redirectTo: '/localedata', pathMatch: 'full' },
-  { path: 'localedata', component: LocalComponent },
+  { path: 'noivos', loadChildren: './pages/noivos/noivos.module#NoivosModule' },
   { path: 'programacao', component: ProgramacaoComponent },
   { path: 'orientacoes', component: OrientacoesComponent },
+  { path: 'localedata', loadChildren: './pages/local/local.module#LocalModule' },
   { path: 'presentes', loadChildren: './pages/presentes/presentes.module#PresentesModule' },
 ];
 
