@@ -2,8 +2,7 @@
 
 <h3>Dinheiro</h3>
 
-<p>Se você pensa em nos presentear, pensamos muito e entendemos que o melhor para nossa família neste momento seria
-  reservar
+<p>Se você pensa em nos presentear, pensamos muito e entendemos que o melhor para nossa família neste momento seria reservar
   um pouco de dinheiro para os meses que virão e para nosso Bernardo que está a caminho.</p>
 
 <div>
@@ -31,15 +30,21 @@
       <th align="left">Quantidade</th>
       <th align="left">Cores</th>
       <th align="left">Marcas</th>
+      <th align="left">Presentear</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor=" let gift of giftsList">
-      <td>{{ gift.nome }}</td>
-      <td align="center">{{ gift.quantidade || 1 }}</td>
-      <td>{{ gift.cores }}</td>
-      <td>{{ gift.marcas }}</td>
-    </tr>
+    <ng-container *ngFor=" let gift of giftsList">
+      <tr *ngIf="gift.data as giftData">
+        <td>{{ giftData.nome }}</td>
+        <td align="center">{{ giftData.quantidade || 1 }}</td>
+        <td>{{ giftData.cores }}</td>
+        <td>{{ giftData.marcas }}</td>
+        <td>
+          <button mat-button type="button" (click)="reward(gift)">Este</button>
+        </td>
+      </tr>
+    </ng-container>
   </tbody>
 </table>
 
@@ -51,8 +56,7 @@
   <strong>Contatos:</strong> Bruno 48 996585472 e Denise 48 996769212
 </p>
 
-<p>Ps.: Favor avisar aos noivos caso for presentear com algum dos itens acima para que seja removido da lista e evite
-  presentes
+<p>Ps.: Favor avisar aos noivos caso for presentear com algum dos itens acima para que seja removido da lista e evite presentes
   duplicados. brunodasj@gmail.com ou denisefaccin@gmail.com. Obrigado!
 </p>
 
