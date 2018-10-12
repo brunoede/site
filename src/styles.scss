@@ -37,5 +37,15 @@ tbody tr:nth-child(odd) {
 }
 
 th, td {
-  padding: 4px 8px;
+  padding: 0px 8px;
+}
+
+
+mat-form-field { 
+  width: 100%;
+}
+
+.bg-success {
+  background-color: #2ecc71;
+  color: white;
 }

@@ -4,7 +4,9 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { PresentesRoutingModule } from './presentes-routing.module';
 import { PresentesComponent } from './presentes.component';
-import { MatButtonModule } from '@angular/material';
+import { MatButtonModule, MatDialogModule, MatInputModule, MatSnackBarModule } from '@angular/material';
+import { FormularioPresenteComponent } from './formulario-presente/formulario-presente.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -12,7 +14,12 @@ import { MatButtonModule } from '@angular/material';
     PresentesRoutingModule,
     AngularFirestoreModule,
     MatButtonModule,
+    MatDialogModule,
+    MatInputModule,
+    MatSnackBarModule,
+    FormsModule,
   ],
-  declarations: [PresentesComponent]
+  declarations: [PresentesComponent, FormularioPresenteComponent],
+  entryComponents: [FormularioPresenteComponent]
 })
 export class PresentesModule { }

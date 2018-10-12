@@ -1,0 +1,41 @@
+<h3 mat-dialog-title>
+  <span *ngIf="giftStream.data.disponivel">Presentear com</span> {{ giftStream.data.nome }}</h3>
+
+<form (submit)="onSubmit()">
+
+  <mat-dialog-content>
+
+    <ng-container *ngIf="giftStream.data.disponivel">
+
+      <div>Deixe seu nome para que saibamos da intenção e possamos remover o item da lista.</div>
+
+      <div>Você pode presentear apenas um item por vez.</div>
+
+      <div>Cada vez que você presenteia, um item é descontado da lista até que quantidade seja atingida e o item seja removido.</div>
+
+      <br>
+
+      <mat-form-field>
+        <textarea matInput [(ngModel)]="nome" name="nome" placeholder="Nome e contato"></textarea>
+      </mat-form-field>
+
+    </ng-container>
+
+    <small *ngIf="giftStream.data.givenBy">
+      <h4>Quem já presenteou com {{ giftStream.data.nome }}:</h4>
+      <ul>
+        <li *ngFor="let giver of giftStream.data.givenBy">1x {{giver}}</li>
+      </ul>
+    </small>
+
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+
+    <button mat-button type="button" mat-dialog-close>Cancelar</button>
+    &nbsp;
+    <button mat-flat-button type="submit" color="primary" [disabled]="!nome || nome.length < 2" *ngIf="giftStream.data.disponivel">Presentear</button>
+
+  </mat-dialog-actions>
+
+</form>

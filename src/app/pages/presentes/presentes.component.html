@@ -35,13 +35,13 @@
   </thead>
   <tbody>
     <ng-container *ngFor=" let gift of giftsList">
-      <tr *ngIf="gift.data as giftData">
+      <tr *ngIf="gift.data as giftData" [ngClass]="{'given-item': !giftData.disponivel}">
         <td>{{ giftData.nome }}</td>
-        <td align="center">{{ giftData.quantidade || 1 }}</td>
+        <td align="center">{{ giftData.disponivel }}</td>
         <td>{{ giftData.cores }}</td>
         <td>{{ giftData.marcas }}</td>
         <td>
-          <button mat-button type="button" (click)="reward(gift)">Este</button>
+          <button mat-button type="button" (click)="openRewardForm(gift)">{{ giftData.disponivel ? 'Presentear' : 'Conferir'}}</button>
         </td>
       </tr>
     </ng-container>

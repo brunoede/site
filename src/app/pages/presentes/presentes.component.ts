@@ -1,14 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, DocumentChangeAction } from '@angular/fire/firestore';
-import { Observable, pipe, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
-export interface Gift {
-  cores: string;
-  marcas: string;
-  nome: string;
-  quantidade: number;
-}
+import { MatDialog, MatSnackBar } from '@angular/material';
+import { FormularioPresenteComponent } from './formulario-presente/formulario-presente.component';
+import { Gift, GiftStream } from './gifts.model';
 
 @Component({
   selector: 'app-presentes',
@@ -17,14 +13,16 @@ export interface Gift {
 })
 export class PresentesComponent implements OnInit {
 
-  gifts: Observable<any>;
+  gifts: Observable<GiftStream[]>;
 
-  private giftsCollectionConnection: AngularFirestoreCollection<any>;
+  private giftsCollectionConnection: AngularFirestoreCollection<Gift>;
 
-  private giftsCollectionSnapshotStream: Observable<DocumentChangeAction<any>[]>;
+  private giftsCollectionSnapshotStream: Observable<DocumentChangeAction<Gift>[]>;
 
   constructor(
     private db: AngularFirestore,
+    private dialog: MatDialog,
+    private snack: MatSnackBar,
   ) { }
 
   ngOnInit() {
@@ -33,41 +31,43 @@ export class PresentesComponent implements OnInit {
       return ref.orderBy('nome');
     });
 
-    /*     this.giftsCollectionConnection.snapshotChanges().subscribe(res => {
-          console.log('snapshotChanges', res);
-
-          res.forEach(item => {
-            console.log('document change action', item.payload.doc.data());
-          });
-        }); */
-
     this.giftsCollectionSnapshotStream = this.giftsCollectionConnection.snapshotChanges();
 
     this.gifts = this.giftsCollectionSnapshotStream.pipe(
       map(collection => {
         return collection.map(item => {
-          const giftStream = {
+          const giftStream: GiftStream = {
             id: item.payload.doc.id,
             stream: item,
-            data: item.payload.doc.data()
+            data: new Gift(item.payload.doc.data())
           };
           return giftStream;
         });
       })
     );
+
   }
 
-  reward(gift) {
+  openRewardForm(giftStream) {
+    const dialogRef = this.dialog.open(FormularioPresenteComponent);
+    dialogRef.componentInstance.giftStream = giftStream;
+    dialogRef.afterClosed().subscribe(giver => {
+      if (giver) {
+        giftStream.data.givenBy = giftStream.data.givenBy ? [...giftStream.data.givenBy, giver] : [giver];
+        this.reward(giftStream);
+      }
+    });
+  }
 
-    const item: Gift = gift.data;
-
-    item.quantidade = 3;
-
-    this.giftsCollectionConnection.doc(gift.id).update(item)
+  private reward(giftStream) {
+    const item: any = { ...giftStream.data };
+    this.giftsCollectionConnection.doc(giftStream.id).update(item)
       .then(updated => {
-        console.log('updated', updated);
+        this.snack.open('Presenteado. Muito obrigado!!!', undefined, {
+          panelClass: 'bg-success',
+          duration: 3e3
+        });
       });
-
   }
 
 }
