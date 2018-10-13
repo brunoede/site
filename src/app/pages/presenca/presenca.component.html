@@ -1,0 +1,40 @@
+<h2>Confirmação de presença</h2>
+
+<div>
+
+  <div class="text-center">
+
+    <button type="button" mat-stroked-button color="primary" *ngIf="!addNovoConvidado" (click)="addNovoConvidado = true">Confirmar presença</button>
+
+  </div>
+
+  <form (submit)="onConfirm()" *ngIf="addNovoConvidado">
+
+    <mat-form-field>
+
+      <input matInput type="text" name="nome" [(ngModel)]="nome" placeholder="Nome do convidado">
+
+    </mat-form-field>
+
+    <mat-radio-group [(ngModel)]="confirmacao" name="confirmacao">
+      <mat-radio-button value="confirmada">Eu vou</mat-radio-button>
+      &nbsp;
+      <mat-radio-button value="cancelada">Não vou</mat-radio-button>
+    </mat-radio-group>
+
+    <div class="text-right">
+
+      <button type="button" mat-button (click)="addNovoConvidado = false; nome = undefined;">Cancelar</button>
+      &nbsp;
+      <button type="submit" mat-flat-button color="primary" [disabled]="!nome || nome.length < 2 || !confirmacao">Confirmar</button>
+
+    </div>
+
+  </form>
+
+</div>
+
+<h3>Presença confirmada</h3>
+<ul>
+  <li *ngFor="let convidado of (convidados | async)" [ngClass]="{'cancelada': convidado.data.confirmacao === 'cancelada'}">{{ convidado.data.nome }} - Presença: {{ convidado.data.confirmacao }}</li>
+</ul>

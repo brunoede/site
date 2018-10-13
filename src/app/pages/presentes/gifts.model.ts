@@ -1,5 +1,3 @@
-import { DocumentChangeAction } from '@angular/fire/firestore';
-
 export class Gift {
   cores: string;
   marcas: string;
@@ -18,8 +16,3 @@ export class Gift {
   }
 }
 
-export interface GiftStream {
-  id: string;
-  stream: DocumentChangeAction<any>;
-  data: Gift;
-}

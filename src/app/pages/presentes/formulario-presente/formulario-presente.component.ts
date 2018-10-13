@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { GiftStream } from './../gifts.model';
 import { MatDialogRef } from '@angular/material';
+import { FirestoreCollectionItemStream } from './../../../shared/models/firestore.models';
 
 @Component({
   selector: 'app-formulario-presente',
@@ -9,7 +9,7 @@ import { MatDialogRef } from '@angular/material';
 })
 export class FormularioPresenteComponent {
 
-  giftStream: GiftStream;
+  giftStream: FirestoreCollectionItemStream;
 
   nome;
 

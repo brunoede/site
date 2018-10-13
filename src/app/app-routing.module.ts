@@ -1,11 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './pages/home/home.component';
-import { LocalComponent } from './pages/local/local.component';
 import { ProgramacaoComponent } from './pages/programacao/programacao.component';
 import { OrientacoesComponent } from './pages/orientacoes/orientacoes.component';
-import { PresentesComponent } from './pages/presentes/presentes.component';
 
 const AppRoutes = [
   { path: '', redirectTo: '/localedata', pathMatch: 'full' },
@@ -13,6 +10,7 @@ const AppRoutes = [
   { path: 'programacao', component: ProgramacaoComponent },
   { path: 'orientacoes', component: OrientacoesComponent },
   { path: 'localedata', loadChildren: './pages/local/local.module#LocalModule' },
+  { path: 'presenca', loadChildren: './pages/presenca/presenca.module#PresencaModule' },
   { path: 'presentes', loadChildren: './pages/presentes/presentes.module#PresentesModule' },
 ];
 

@@ -4,7 +4,8 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { MatDialog, MatSnackBar } from '@angular/material';
 import { FormularioPresenteComponent } from './formulario-presente/formulario-presente.component';
-import { Gift, GiftStream } from './gifts.model';
+import { Gift } from './gifts.model';
+import { FirestoreCollectionItemStream } from './../../shared/models/firestore.models';
 
 @Component({
   selector: 'app-presentes',
@@ -13,7 +14,7 @@ import { Gift, GiftStream } from './gifts.model';
 })
 export class PresentesComponent implements OnInit {
 
-  gifts: Observable<GiftStream[]>;
+  gifts: Observable<FirestoreCollectionItemStream[]>;
 
   private giftsCollectionConnection: AngularFirestoreCollection<Gift>;
 
@@ -36,7 +37,7 @@ export class PresentesComponent implements OnInit {
     this.gifts = this.giftsCollectionSnapshotStream.pipe(
       map(collection => {
         return collection.map(item => {
-          const giftStream: GiftStream = {
+          const giftStream: FirestoreCollectionItemStream = {
             id: item.payload.doc.id,
             stream: item,
             data: new Gift(item.payload.doc.data())
