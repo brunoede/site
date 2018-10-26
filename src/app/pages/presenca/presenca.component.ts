@@ -21,6 +21,10 @@ export class PresencaComponent implements OnInit {
 
   convidados: Observable<any[]>;
 
+  confirmados: Observable<any[]>;
+
+  cancelados: Observable<any[]>;
+
   private convidadosCollectionConnection: AngularFirestoreCollection<any>;
 
   private convidadosCollectionSnapshotStream: Observable<DocumentChangeAction<any>[]>;
@@ -28,7 +32,7 @@ export class PresencaComponent implements OnInit {
   ngOnInit() {
 
     this.convidadosCollectionConnection = this.db.collection<any>('convidados', ref => {
-      return ref.orderBy('nome');
+      return ref.orderBy('nome', 'desc');
     });
 
     this.convidadosCollectionSnapshotStream = this.convidadosCollectionConnection.snapshotChanges();
@@ -45,6 +49,18 @@ export class PresencaComponent implements OnInit {
         });
       })
     );
+
+    this.confirmados = this.convidados.pipe(map((convidados: any[]) => {
+      return convidados.filter((item: any) => {
+        return item.data.confirmacao === 'confirmada';
+      });
+    }));
+
+    this.cancelados = this.convidados.pipe(map((convidados: any[]) => {
+      return convidados.filter((item: any) => {
+        return item.data.confirmacao === 'cancelada';
+      });
+    }));
 
   }
 

@@ -23,6 +23,8 @@
 
 <h3>Lista de presentes</h3>
 
+<p>Se desejar, separamos algumas das coisas que estamos querendo adquirir.</p>
+
 <table *ngIf="(gifts | async) as giftsList else loadingGifts">
   <thead>
     <tr>
@@ -56,8 +58,8 @@
   <strong>Contatos:</strong> Bruno 48 996585472 e Denise 48 996769212
 </p>
 
-<p>Ps.: Favor avisar aos noivos caso for presentear com algum dos itens acima para que seja removido da lista e evite presentes
-  duplicados. brunodasj@gmail.com ou denisefaccin@gmail.com. Obrigado!
+<p>
+  <strong>Ps.:</strong> Favor indicar na lista acima o presente que tem intenção de dar. Se preferir, comunique diretamente os noivos através de um dos e-mails ou telefones a seguir: brunodasj@gmail.com (48 996585472) ou denisefaccin@gmail.com (48 996769212). Obrigado!
 </p>
 
 <ng-template #loadingGifts>

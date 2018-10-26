@@ -35,6 +35,15 @@
 </div>
 
 <h3>Presença confirmada</h3>
-<ul>
-  <li *ngFor="let convidado of (convidados | async)" [ngClass]="{'cancelada': convidado.data.confirmacao === 'cancelada'}">{{ convidado.data.nome }} - Presença: {{ convidado.data.confirmacao }}</li>
-</ul>
+<ol>
+  <li *ngFor="let convidado of (confirmados | async)">
+    {{ convidado.data.nome }}
+  </li>
+</ol>
+
+<h3>Ausência confirmada</h3>
+<ol>
+  <li *ngFor="let convidado of (cancelados | async)">
+    {{ convidado.data.nome }}
+  </li>
+</ol>
