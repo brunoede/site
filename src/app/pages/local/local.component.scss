@@ -4,3 +4,40 @@
     margin: auto;
   }
 }
+
+.carousel-item {
+  display: flex;
+  height: 60vh;
+  width: 100%;
+}
+
+.carousel-img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  max-height: 60vh;
+}
+
+.leftRs {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    height: 50px;
+    box-shadow: 1px 2px 10px -1px rgba(0, 0, 0, .3);
+    border-radius: 999px;
+    left: 0;
+}
+
+.rightRs {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    height: 50px;
+    box-shadow: 1px 2px 10px -1px rgba(0, 0, 0, .3);
+    border-radius: 999px;
+    right: 0;
+}

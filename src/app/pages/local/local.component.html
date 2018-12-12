@@ -30,9 +30,19 @@
     </div>
 
     <div *ngIf="showing === 'images'">
-      <div *ngFor="let image of images">
-        <img src="https://drive.google.com/thumbnail?id={{image.id}}&sz=w600">
-      </div>
+      <ngu-carousel [inputs]="carouselConf">
+
+        <ngu-item NguCarouselItem *ngFor="let image of images">
+          <div class="carousel-item">
+            <img class="carousel-img" [src]="image.url" />
+          </div>
+        </ngu-item>
+
+        <button NguCarouselPrev class='leftRs'>&lt;</button>
+
+        <button NguCarouselNext class='rightRs'>&gt;</button>
+
+      </ngu-carousel>
     </div>
 
   </div>

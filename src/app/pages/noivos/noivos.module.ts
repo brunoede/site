@@ -6,6 +6,7 @@ import { NoivosComponent } from './noivos.component';
 import { GoogleDriveServiceModule } from '../../shared/services/google-drive/google-drive-service.module';
 import { MatButtonModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { NguCarouselModule } from '@ngu/carousel';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     GoogleDriveServiceModule,
     MatButtonModule,
     FlexLayoutModule,
+    NguCarouselModule,
   ],
   declarations: [NoivosComponent]
 })

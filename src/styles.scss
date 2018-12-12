@@ -22,6 +22,7 @@ body {
   min-width: 600px;
   background-image: url("/assets/images/bg.jpg");
   background-repeat: repeat;
+  color: #636363;
 
   h1, h3 {
     color: $primary-color;
@@ -41,7 +42,7 @@ th, td {
 }
 
 
-mat-form-field { 
+mat-form-field {
   width: 100%;
 }
 

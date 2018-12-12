@@ -2,11 +2,15 @@
 
 <h3>Denise Faccin</h3>
 <p>Minha Amora! Linda da minha vida!</p>
-<p>Mulher maravilhosa, batalhadora, parceira e companheira. Sempre disposta e comprometida com a família, amigos e projetos
-  dos quais faz parte.</p>
+<p>Mulher maravilhosa, batalhadora, parceira e companheira. Sempre disposta e comprometida com a família, amigos e projetos dos quais faz parte.</p>
 
 <h3>Bruno da Silva João</h3>
-<p>...</p>
+<p>"Por que Vinagre? Ele é azedo?"</p>
+<p>"Não, ele é a pessoa mais doce que já conheci!"</p>
+<p>E assim consegui encontrar a primeira definição de sentimento sobre essa pessoa maravilhosa!</p>
+<p>Depois de sete anos esse sentimento cresceu e se transformou em admiração, carinho, respeito e amor!</p>
+<p>Que todos esses sentimentos bons se multipliquem e se espalhem por onde passarmos!</p>
+<p>Agora é hora de colhermos e celebrarmos importantes frutos disso tudo: nosso casamento e a chegada do nosso amado filho \o/</p>
 
 <div fxLayout="column" fxLayoutGap="16px">
 
@@ -23,9 +27,21 @@
     </div>
 
     <div *ngIf="showing === 'images'">
-      <div *ngFor="let image of images">
-        <img src="https://drive.google.com/thumbnail?id={{image.id}}&sz=w600">
-      </div>
+
+      <ngu-carousel [inputs]="carouselConf">
+
+        <ngu-item NguCarouselItem *ngFor="let image of images">
+          <div class="carousel-item">
+            <img class="carousel-img" [src]="image.url" />
+          </div>
+        </ngu-item>
+
+        <button NguCarouselPrev class='leftRs'>&lt;</button>
+
+        <button NguCarouselNext class='rightRs'>&gt;</button>
+
+      </ngu-carousel>
+
     </div>
 
   </div>

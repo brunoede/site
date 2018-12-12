@@ -7,6 +7,7 @@ import { LocalComponent } from './local.component';
 import { MatButtonModule } from '@angular/material';
 import { GoogleDriveServiceModule } from '../../shared/services/google-drive/google-drive-service.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { NguCarouselModule } from '@ngu/carousel';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatButtonModule,
     GoogleDriveServiceModule,
     FlexLayoutModule,
+    NguCarouselModule,
   ],
   declarations: [
     LocalComponent
